@@ -1,0 +1,75 @@
+{{extend 'master.html'}}
+	  
+		<div class="container">
+			<h3>Get Started - its free.</h3>
+			<p></p>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="wrapper">
+					<div class="col-md-16">
+						<div class="options">
+
+
+
+							<div class="container">
+							  <h2 align="right">Hotels And Services</h2>
+							  <p> </p>
+							<div class="form-group">
+								<a href="{{=URL('details')}}" class="btn btn-info btn-lg">Add New Hotel</a>
+							</div>
+
+						</div>
+
+						
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title"><b>DETAILS</b></h3>
+							</div>
+								<div class="details">
+									{{if hotels:}}
+			    					<table class="table table-stripped table-hover">
+			    						<tr>
+			    							<th>Hotel Name</th>
+			    							<th>Hotel Class</th>
+			    							<th>Contact Number</th>
+			    							<th>Rooms</th>
+			    							<th>Minimum Price</th>
+			    							<th>Email</th>
+			    							<th>Actions</th>
+			    						</tr>
+			    						{{for hotel in hotels:}}
+			    							<tr>
+			    								<td><a href="{{=URL('hotelDetails',args=hotel.id)}}">{{=hotel.db_hotel_name}}</a></td>
+			    								<td>{{=hotel.db_hotelclass}}</td>
+			    								<td>{{=hotel.db_contactnumber}}</td>
+			    								<td>{{=hotel.db_rooms}}</td>
+			    								<td>{{=hotel.db_minimumprice}}</td>
+			    								<td>{{=hotel.db_email}}</td>
+			    								<td>
+			    									
+			    									<!-- <a href="{{=URL('addservice',args=hotel.id)}}" class="btn btn-info btn-md"><i class="fa fa-plus"></i></a> -->
+
+			    									<!-- <a href="{{=URL('checkservice',args=hotel.id)}}" class="btn btn-success btn-md">Services</a>
+ -->
+
+ 													<a href="{{=URL('editdetails',args=hotel.id)}}" class="btn btn-info btn-md">Edit</a>
+
+			    									<a href="{{=URL('delete', args=hotel.id)}}" <a href="#" class="btn btn-danger btn-md">
+         								 			<i class="fa fa-trash"></i></a>
+       									 			</a>
+			    								</td>
+			    							</tr>
+			    							{{pass}}
+			    						</table>
+			    					{{else:}}
+			    						<h2>No Details Found</h2>
+			    					{{pass}}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>

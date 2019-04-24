@@ -1,0 +1,51 @@
+{{extend 'layout_master.html'}}
+  <div class="hero-section">
+    <div class="hero-cover">
+      <div class='container'>
+        <div class='row hero-content'>    
+          <div class="container">
+            <div class="row">
+              <div class="col-md-7">
+                <h1 class="banner-text">Find an affordable place to spend some time</h1>
+                <h3 class="banner-text">Hotels, Guest Houses, Movie Houses, Hostels...</h3>
+                <h4 class="banner-text">AFFORDABLE.CONVENIENT.CLASSY</h4>
+                <br>
+                <p>
+                  <a href="{{=URL('admindashboard')}}" class="btn btn-danger btn-lg">List your hotel</a>
+                </p>
+              </div>
+              <div class="col-md-5"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container featured-properties">
+    <div class="row">
+      <h3 style="color: #337ab7">RECENT LISTINGS</h3>
+      <br>
+      <!-- Loop this to display featured properties -->
+      {{if hotels:}}
+          {{for hotel in hotels:}}
+      <div class="col-md-4">
+        <a href="{{=URL('hotel_details',args=hotel.id)}}">
+          <div class="featured-item">
+            {{image = getImage(hotel.id)}}
+            <img src="{{=URL('download', args=image.file)}}" alt="image of property" class="img-responsive"/>
+            <hr>
+            <h4>{{=hotel.db_hotel_name}}</h4>
+            <p>
+              {{=hotel.db_description}} 
+            </p>
+            <p>Rating:{{=hotel.db_hotelclass}}</p>
+            <p>Price:GHS{{=hotel.db_minimumprice}} / hour</p>
+          </div>
+        </a>
+      </div>
+      {{pass}}
+      {{pass}}
+      <!-- loop ends here -->
+    </div>
+  </div>

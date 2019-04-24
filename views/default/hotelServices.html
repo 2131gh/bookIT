@@ -1,0 +1,40 @@
+{{extend 'master.html'}}
+		
+		<div class="container">
+			<div class="row">
+				<div class="wrapper">
+					<div class="col-md-16">
+						<div class="options">
+
+
+
+							<div class="container">
+							  <h2 align="right">Hotels And Services</h2>
+							  <p> </p>
+							
+						</div>
+						
+						
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title"><b>Services</b></h3>
+							</div>
+								<div class="details">
+									{{if images:}}
+										{{for image in images:}}
+									<img class="thumbnail" src="{{=URL('download', args=image.file)}}"/>
+									{{pass}}
+									{{pass}}
+									<h1>{{=service.db_title}}</h1>
+    								<p><b>Price</b>: {{=service.db_price}}</p>
+    								<p width="400"><b>Description</b>: {{=service.db_description}}</p>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<!-- Footer Elements -->
+	

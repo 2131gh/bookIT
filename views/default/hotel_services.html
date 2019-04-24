@@ -1,0 +1,41 @@
+{{extend 'layout_master.html'}}
+
+  <div class="container">
+    <div class="row">
+      <h2 style="text-align:center;">Hotel Name (3 stars)</h2>
+      <br>
+      <div class="col-md-7">
+        <h3>SERVICE</h3>
+
+
+
+        <h4>Price </h4>
+        <p>{{=service.db_price}}</p>
+
+        <h4>Description</h4>
+        <p>
+         {{=service.db_description}}
+        </p>
+
+      </div>
+      <div class="col-md-5">
+        <a href="{{=URL('hotel_details',args=hotel.id)}}">
+        <div class="hotel-images">
+          {{image = getImage(hotel.id)}}
+          <img src="" alt="image of property" class="img-responsive"/>
+        </div>
+          {{pass}} 
+      </div>
+    </div>
+  </div>
+  
+    
+  
+  <script>
+    $(document).ready(function(){
+      lightbox.option({
+        'fadeDuration': 300,
+        'imageFadeDuration': 300
+      })
+    })
+  </script>

@@ -1,0 +1,34 @@
+{{extend 'master.html'}}
+ 	<div class="container">
+ 		<p></p>
+ 	</div>
+ 	<div class="container">
+ 		<div class="row">
+ 			<div class="wrapper">
+ 				<div class="col-sm-4 col-sm-offset-4 ">
+
+ 					
+		<form method= "POST" action="{{=URL('update')}}">
+			<div class="form-group">
+				<label for="title" class=>Title</label>
+				<input type="text" class="form-control" name="title" placeholder="title">
+			</div>
+			<div class="form-group">
+				<label for="file" class=>File</label>
+				<input type="file" class="form-control" name="file" placeholder="file">
+			</div>
+			<div class="form-group">
+				<label for="description" class=>Description</label>
+				<textarea type="text" class="form-control" name="description" placeholder= "write something here..." required rows="10"></textarea>
+			</div>
+			<div class="form-group">
+				<label for="price" class=>Price</label>
+				<input type="text" class="form-control" name="price" placeholder="&pound">
+			</div>
+			
+				
+				<input type="submit" class="btn btn-primary" value="Update Service">
+			</div>
+			
+		</form>
+

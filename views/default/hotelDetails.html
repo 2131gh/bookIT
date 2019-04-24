@@ -1,0 +1,73 @@
+{{extend 'master.html'}}
+		
+		<div class="container">
+			<div class="row">
+				<div class="wrapper">
+					<div class="col-md-16">
+						<div class="options">
+
+
+
+							<div class="container">
+							  <h2 align="right">Hotels And Services</h2>
+							  <p> </p>
+								<div class="form-group">
+								<a href="{{=URL('addservice',args=hotel.id)}}" class="btn btn-info btn-lg">Add New Service</a>
+							</div>
+						</div>
+
+						
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title"><b>DETAILS</b></h3>
+							</div>
+								<div class="detail">
+									<div class="row">
+									{{if images:}}
+										{{for image in images:}}
+										<div class="col-md-6">
+									<img class="thumbnail" src="{{=URL('download', args=image.file )}}" width="500" />
+									</div>
+									{{pass}}
+									{{pass}}
+									</div>
+									<h1>{{=hotel.db_hotel_name}}</h1>
+									<p><b>Class</b>: {{=hotel.db_hotelclass}}</p>
+    								<p><b>Contact</b>: {{=hotel.db_contactnumber}}</p>
+    								<p><b>Number of Rooms</b>: {{=hotel.db_rooms}}</p>
+    								<p><b>Minimum Price</b>: {{=hotel.db_minimumprice}}</p>
+    								<p><b>Email</b>: {{=hotel.db_email}}</p>
+    								<p width="400"><b>Description</b>: {{=hotel.db_description}}</p>	
+								</div>
+
+								{{if services:}}
+						<table class="table table-stripped table-hover">
+							<tr>
+								<th>Title</th>	
+								<th>Price</th>	
+								<th>Actions</th>
+							</tr>
+							{{for service in services:}}
+								<tr>
+									<td><a href="{{=URL('hotelServices',args=service.id)}}">{{=service.db_title}}</a></td>
+									<td>{{=service.db_price}}</td>
+									<td>
+										<a href="{{=URL('editservices', args=service.id)}}" <a href="#" class="btn btn-info btn-md">
+         								<i class="fa fa-edit"></i></a>
+
+										<a href="{{=URL('deleteservice', args=service.id)}}" <a href="#" class="btn btn-danger btn-md">
+         								<i class="fa fa-trash"></i></a>
+       									</a>
+									</td>
+								</tr>
+								{{pass}}
+							</table>
+							{{else:}}
+							<h2>No Service Found</h2>
+							{{pass}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>

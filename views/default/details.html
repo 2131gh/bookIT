@@ -1,0 +1,65 @@
+{{extend 'master.html'}}
+  
+		<div class="container">
+  			<p>Get started - its free.</p>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="wrapper">			
+					<div class="col-md-4 col-sm-offset-4">
+							<form action="{{=URL('store')}}" method="post" enctype="multipart/form-data">
+								<div class="form-group">
+										<label for="hotel_name" class=>Hotel Name</label>
+										<input type="text" class="form-control" name="hotel_name" placeholder="hotel name">
+									</div>
+
+									<div class="form-group">
+										<label for="hotelclass" class=>Hotel Class</label>
+										<input type="text" class="form-control" name="hotelclass" placeholder="hotel class">
+									</div>
+
+									<div class="form-group">
+										<label for="contactnumber" class=>Contact Number</label>
+										<input type="text" class="form-control" name="contactnumber" placeholder="contact number">
+									</div>
+
+									<div class="form-group">
+										<label for="rooms" class=>Rooms</label>
+										<input type="text" class="form-control" name="rooms" placeholder="rooms">
+									</div>
+
+									<div class="form-group">
+										<label for="minimumprice" class=>Minimum Price</label>
+										<input type="text" class="form-control" name="minimumprice" placeholder="&pound.10">
+									</div>
+
+									<div class="form-group">
+										<label for="email" class=>Email</label>
+										<input type="text" class="form-control" name="email" placeholder="email">
+									</div>
+
+									<div class="form-group">
+										<label for="description" class=>Description</label>
+										<textarea type="text" class="form-control" name="description" placeholder="write something about the hotel.." required rows="10"></textarea>
+									</div>
+									
+									<div class="form-group">
+										<label for="file" class=>Select Hotel Images</label>
+										<input type="file" class="form-control" name="files" placeholder="file" multiple="true">
+									</div>
+
+									<div class="form-group">
+										<input type="submit" class="btn btn-primary" value="Save Details">
+									</div>
+								</form>
+							</div>
+									
+						</div>
+						</div>
+					</div>
+				</div>
+
+
+
+

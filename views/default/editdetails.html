@@ -1,0 +1,56 @@
+{{extend 'master.html'}}
+			<div class="container">
+  			<h3>.</h3>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="wrapper">			
+					<div class="col-sm-4 col-sm-offset-4">
+							
+								<form method="POST" action="{{=URL('update')}}">
+									<div class="form-group">
+										<label for="hotel_name" class=>Hotel Name</label>
+										<input type="text" class="form-control" name="hotel_name" placeholder="hotel name" value="{{=hotel.db_hotel_name}}">
+									</div>
+
+									<div class="form-group">
+										<label for="hotelclass" class=>Hotel Class</label>
+										<input type="text" class="form-control" name="hotelclass" placeholder="hotel class" value="{{=hotel.db_hotelclass}}">
+									</div>
+
+									<div class="form-group">
+										<label for="contactnumber" class=>Contact Number</label>
+										<input type="text" class="form-control" name="contactnumber" placeholder="contact number" value="{{=hotel.db_contactnumber}}">
+									</div>
+
+									<div class="form-group">
+										<label for="rooms" class=>Rooms</label>
+										<input type="Number" class="form-control" name="rooms" placeholder="room" value="{{=hotel.db_rooms}}">
+									</div>
+
+									<div class="form-group">
+										<label for="minimumprice" class=>Minimum Price</label>
+										<input type="text" class="form-control" name="minimumprice" placeholder="&pound.10" value="{{=hotel.db_minimumprice}}">
+									</div>
+
+									<div class="form-group">
+										<label for="email" class=>Email</label>
+										<input type="text" class="form-control" name="email" placeholder="email" value="{{=hotel.db_email}}">
+									</div>
+
+									<div class="form-group">
+										<label for="description" class=>Description</label>
+										<textarea type="text" class="form-control" name="description" placeholder="write something here..." required rows="10">{{=hotel.db_description}}</textarea>
+									</div>
+									<input type="hidden" name="id" value="{{=hotel.id}}">
+									<div class="form-group">
+										<input type="submit" class="btn btn-primary" value="Update Details">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+
+	
